@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title_block %} {{ blog.blog_title }} {% endblock %}
+{% block body_block %}
+
+	<div class = "row">
+		<div class = "col-sm-6">
+			<h2>{{ blog.blog_title }}</h2>
+			<h4>Posted by: @{{ blog.author }}</h4>
+			<i><h6>Publish on: {{ blog.publish_date }}</h6></i>
+			<i><h6>Updated on: {{ blog.update_date }}</h6></i>
+		</div>
+		<div class = "col-sm-6">
+			<img src = "/media/{{ blog.blog_image }}" width = "100%">
+		</div>
+		<p>{{ blog.blog_content|linebreaks }}</p>
+	</div>
+
+{% endblock %}
